@@ -19,12 +19,7 @@ describe("Navbar", () => {
 
   it("should render the navbar with all navigation links", () => {
     render(
-      <Router
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <Router>
         <Navbar />
       </Router>
     );
@@ -36,13 +31,7 @@ describe("Navbar", () => {
 
   it("should highlight the active link based on the current path", () => {
     render(
-      <MemoryRouter
-        initialEntries={["/projects"]}
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <MemoryRouter initialEntries={["/projects"]}>
         <Navbar />
       </MemoryRouter>
     );
@@ -56,12 +45,7 @@ describe("Navbar", () => {
     window.innerWidth = 500;
     window.dispatchEvent(new Event("resize"));
     render(
-      <Router
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <Router>
         <Navbar />
       </Router>
     );
@@ -73,12 +57,7 @@ describe("Navbar", () => {
 
   it("should render the open button with 'Open menu' label when the mobile menu is closed", () => {
     render(
-      <Router
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
+      <Router>
         <Navbar />
       </Router>
     );
