@@ -12,6 +12,10 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   const [touchEnd, setTouchEnd] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
+  if (!images || images.length === 0) {
+    return null; // Tidak merender apa pun jika images kosong
+  }
+
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
@@ -51,6 +55,8 @@ const ImageSlider: React.FC<ImageSliderProps> = ({
   return (
     <div
       ref={sliderRef}
+      role="region"
+      aria-label="Image Slider"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

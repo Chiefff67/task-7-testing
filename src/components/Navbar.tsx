@@ -76,7 +76,7 @@ const Navbar = () => {
       </ul>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
+      {isMenuOpen ? (
         <ul className="md:hidden absolute top-full left-0 right-0 bg-secondary py-4 flex flex-col items-center space-y-4 shadow-lg">
           <li>
             <Link
@@ -131,7 +131,7 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-      )}
+      ) : null}
     </nav>
   );
 };

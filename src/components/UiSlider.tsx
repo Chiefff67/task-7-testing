@@ -11,6 +11,10 @@ const UiSlider: React.FC<ImageSliderProps> = ({ images }) => {
   const [touchEnd, setTouchEnd] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
+  if (!images || images.length === 0) {
+    return null; // Tidak merender apa pun jika images kosong
+  }
+
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
@@ -44,6 +48,8 @@ const UiSlider: React.FC<ImageSliderProps> = ({ images }) => {
   return (
     <div
       ref={sliderRef}
+      role="region"
+      aria-label="Image Slider"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
@@ -61,6 +67,7 @@ const UiSlider: React.FC<ImageSliderProps> = ({ images }) => {
         <button
           onClick={prevSlide}
           className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
+          aria-label="Previous slide"
         >
           <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
         </button>
@@ -71,6 +78,7 @@ const UiSlider: React.FC<ImageSliderProps> = ({ images }) => {
         <button
           onClick={nextSlide}
           className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
+          aria-label="Next slide"
         >
           <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
         </button>
