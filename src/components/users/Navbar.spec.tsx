@@ -12,7 +12,7 @@ describe("Navbar", () => {
   });
 
   afterEach(() => {
-    window.innerWidth = 1024; // Reset window size
+    window.innerWidth = 1024; 
     window.dispatchEvent(new Event("resize"));
     jest.resetAllMocks();
   });
@@ -36,7 +36,6 @@ describe("Navbar", () => {
       </MemoryRouter>
     );
 
-    // Test the active link
     const activeLink = screen.getByText("Projects");
     expect(activeLink).toHaveClass("text-black font-light");
   });

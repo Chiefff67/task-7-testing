@@ -34,7 +34,6 @@ describe("ImageSlider", () => {
     fireEvent.touchMove(slider, { targetTouches: [{ clientX: 0 }] });
     fireEvent.touchEnd(slider);
 
-    // Tambahkan assertions untuk memverifikasi slide berubah
     expect(screen.getByAltText("Slide 2")).toBeInTheDocument();
   });
 

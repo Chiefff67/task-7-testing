@@ -7,8 +7,6 @@ WORKDIR /src/app
 # Clean cache and remove any pre-existing node_modules and package-lock.json
 RUN rm -rf /src/app/node_modules /src/app/package-lock.json && npm cache clean --force
 
-
-
 # Copy package files for dependency installation
 COPY package*.json ./
 

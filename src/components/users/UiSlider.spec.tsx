@@ -34,7 +34,6 @@ describe("UiSlider", () => {
     fireEvent.touchMove(slider, { targetTouches: [{ clientX: 0 }] });
     fireEvent.touchEnd(slider);
 
-    // Verify the slide changed to Slide 2
     expect(screen.getByAltText("Slide 2")).toBeInTheDocument();
   });
 
@@ -45,7 +44,6 @@ describe("UiSlider", () => {
     fireEvent.touchMove(slider, { targetTouches: [{ clientX: 100 }] });
     fireEvent.touchEnd(slider);
 
-    // Verify the slide changed to Slide 3
     expect(screen.getByAltText("Slide 3")).toBeInTheDocument();
   });
 

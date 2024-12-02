@@ -10,7 +10,6 @@ describe("Footer", () => {
       </Router>
     );
 
-    // Verifikasi jika teks hak cipta ada di footer
     expect(
       screen.getByText("© 2024 Syarif Maulana, All Rights Reserved")
     ).toBeInTheDocument();
